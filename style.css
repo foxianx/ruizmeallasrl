@@ -1,0 +1,653 @@
+/* Elimina margenes y paddings por defecto del navegador */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que los paddings no aumenten el tamaño del contenedor*/    
+}
+
+header {
+    position: sticky;
+    top: 0; /* Mantiene el encabezado en la parte superior */
+    z-index:1000; /* Asegura que el encabezado quede por encima de otros elementos */
+    background-color: #f4f4f4; /* Color de fondo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    padding: 10px 20px;
+}
+
+
+
+section {
+    padding: 50px 20px;
+    margin: 0; /* Elimina margenes entre secciones */
+    width: 100%; /* Asegura que las secciones ocupen el 100% del ancho */
+    box-sizing: border-box; /* Incluye el padding dentro del ancho */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Previene desbordamientos horizontales */
+    font-size: 16px;
+    line-height: 1.5;
+ 
+}
+
+/* Pantallas medianas (tablets o laptops mas pequeñas) */
+@media (max-width: 1366px) {
+    body {
+        font-size:14px;
+    }
+
+    header, footer {
+        padding: 10px, 20px;
+    }   
+    
+    section {
+        padding: 40px, 15px;
+    }
+}
+
+header{
+    display: flex; /* Configura el diseño como un contenedor flexible */
+    justify-content: space-between; /* Espaciado entre elementos del encabezado */
+    align-items: center;
+    padding: 10px 20px; /* Espaciado interno del encabezado */
+    background-color: #f4f4f4; /* Fondo del encabezado */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombre para un efecto de elevacion */
+}
+
+ /* Estilo para el logo dentro del encabezado */
+.logo img {
+    height: 50px; /* Ajusta la altura del logo */
+    width: auto; /* Mantiene las proporciones de la imagen */
+}
+
+nav ul { /* Estilo para la lista de navegacion */
+    display: flex; /* Configura los elementos como una lista horizontal*/
+    list-style: none; /* Elimina los estilos de lista predeterminados */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para cada elemento de la lista de navegacion */
+nav ul li {
+    /* Espaciado entre los enlaces */ 
+    margin: 0 15px;
+}
+ /* Estilos para los enlaces */
+nav ul li a {
+    position: relative;
+    text-decoration: none; /* Elimina el subrayado de los enlaces*/
+    color: #333; /* Color del texto*/
+    font-size: 18px; /* Tamaño y peso del texto */
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transicion suave para el cambio de color */
+}
+
+/* Cambia el color del enlace cuando se pasa el raton por encima */
+nav ul li a:hover {
+    color: #F47734;
+    transform: scale(1.1) /* Aumenta ligeramente el tamaño*/
+}
+
+nav ul li a::after {
+    content:''; /* Linea adicional*/
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Espacio debajo del texto*/
+    width: 0%;
+    height: 2px; /* Grosor de la linea */
+    background-color: #F47734; /* Color de la linea*/
+    transition: width 0.3s ease; /* Animacion de expasion*/
+}
+
+nav ul li a:hover::after {
+    width: 100%; /* Linea se expande completamente */
+}
+
+
+/* Estilo general para las secciones de la pagina */
+section {
+    padding: 50px 20px; /* Espaciado interno para las secciones */
+    margin: 0; /* Elimina margenes externos */
+    margin-bottom: 0px;
+    width: 100%;
+    text-align: center; /* Centra el contenido */
+    box-sizing: border-box;
+}
+
+section + section {
+    margin-top: 0; /*Quita el margen entre secciones consecutivas*/
+}
+
+/* Alterna colores de fondo para las secciones impares */
+section { 
+    background-color: #203864;
+}
+
+
+
+/* Estilo para la parte de servicios*/
+
+section ul {
+    list-style-type:disc; /* Muestra puntos (•) como iconos de lista*/
+    padding-left: 20px; /*Añade espacio a la izquierda de la lista */
+    margin-top: 10px;
+}
+
+section ul li {
+    line-height: 1.8; /* Espaciado entre los elementos de la lista */
+    font-size: 16px; /* Tamaño de texto */
+    color: #ffffff; /* Color del texto */
+}
+
+
+
+#seccion-bienvenidos {
+    text-align: left;
+    color: white;
+    font-size: 28px;
+}
+
+#seccion-bienvenidos q{
+    font-family: 'Comic Sans MS';
+    text-align: left;
+    color: white;
+    font-size: 28px;
+}
+
+#seccion-bienvenidos p {
+    text-align: justify;
+    color: white;
+    font-size: 18px;
+}
+
+
+
+
+#seccion2 {
+    text-align: center;
+    padding: 50px 20px;
+    font-size: 28px;
+    color: #ffffff;
+    background-color: #203864;
+}
+
+
+/* Contenedor Principal */
+.seccion2-container {
+    display: flex; /*Habilita el diseño flexible*/
+    justify-content: center; /* Centra las tarjetas */
+    align-items: center; /* Centra horizontalmente */
+    margin-top: 20px;
+}
+
+/* Tarjeta principal */
+.seccion2-card {
+    position: relative;
+    width: 400px;
+    height: auto; /* Permite que el contenedor crezca automáticamente */
+    background-color: #555;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden; /* Evita que el contenido sobresalga */
+    transition: all 0.5s ease; /* Animación suave */
+}
+
+.seccion2-card.expanded {
+    width: 800px; /* Aumenta el ancho */
+    min-height: 400px; /* Permite que la altura se adapte al contenido */
+}
+
+
+.info-principal,
+.info-secundaria {
+    flex: none; /* No fuerzas que ocupen la misma altura */
+    padding: 20px;
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease;
+}
+
+
+
+.info-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    height: 100%;
+}
+
+
+
+/* Contenido secundario (detalles) */
+.info-secundaria {
+    display: none; /* Oculto por defecto */
+    opacity: 0;
+    transform: translateX(100%); /* Fuera de la vista inicialmente */
+}
+
+.info-secundaria h2 {
+    font-family: 'Arial', sans-serif;
+    color: #f47734;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.info-secundaria p {
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ffffff;
+    text-align: justify;
+}
+
+.info-secundaria img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+
+.seccion2-card.expanded .info-principal {
+    transform: translateX(-100%); /* Mueve la lista hacia la izquierda */
+    display: none;
+}
+
+.seccion2-card.expanded .info-secundaria {
+    display: block; /* Muestra el contenido */
+    opacity: 1;
+    transform: translateX(0); /* Mueve la información a la vista */
+}
+
+.lista-servicios {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Quita el padding izquierdo predeterminado */
+    margin: 0; /* Quita el margen */
+    font-size: 20px;
+}
+
+.lista-servicios li {
+    cursor: pointer;
+    margin: 10px 0;
+    color: white;
+    transition: color 0.3s ease;
+    font-size: 20px;
+}
+
+.lista-servicios li:hover {
+    color: #F47734; /* Cambia el color al pasar el ratón */
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #F47734;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.close-btn:hover {
+    background-color: #F47734;
+}
+
+.ver-mas-btn {
+    display: inline-block;
+    background-color: #F47734;
+    color: #ffffff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none; /* Elimina subrayado */
+    transition: background-color 0.3s;
+    margin-top: 10px; /* Espaciado con el texto anterior */
+}
+
+.ver-mas-btn:hover {
+    background-color: #D65C1F; /* Cambia el color al pasar el mouse */
+    text-decoration: none; /* Mantén el estilo sin subrayado */
+}
+
+
+
+
+
+/* Lista de servicios */
+
+#seccion-elegir {
+    text-align:left;
+    padding: 50px 20px;
+    padding-left: 100px;
+    font-size: 28px;
+    color: white;
+    margin-bottom: 0; /* Elimina el margen inferior */
+}
+
+#seccion-elegir p{
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Servicios lista por que deberia elegi */
+.servicios-lista-elegir {
+    list-style:circle; /*Eliminar marcadores predeterminados */
+    padding: 0;
+    margin: 0 auto; /* Centra la lista */
+    max-width: 800px; /*Ancho maximo*/
+    text-align:left;
+}
+
+.servicios-lista-elegir li{
+    margin-top: 10px; /* Espacio parte de arriba */
+    margin-bottom: 20px; /*Espaciado entre elementos*/
+    font-size: 18px; /* tamaño de texto */
+    line-height: 1.6;
+    position: relative;
+    
+}
+
+
+
+
+/* Estilos del carrousel */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1600px; /* Mantiene el ancho máximo */
+    height: 500px; /* Ajusta esta altura según tus necesidades */
+    margin: auto;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-imagenes {
+    display: flex; /* Coloca las imágenes en línea */
+    transition: transform 0.5s ease-in-out; /* Animación suave */
+}
+
+
+.carousel-imagenes img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+
+.carousel-imagenes img {
+    width: 100%;
+    flex-shrink: 0;
+    /*border-radius: 15px;*/
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 500; 
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left:15px;
+}
+
+.next {
+    right:15px;
+}
+
+/* Indicadores del carousel */
+.caroulse-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.caroulse-indicators span {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-indicators span:hover,
+.carousel-indicators span.active {
+    background-color: white;
+}
+
+
+
+
+
+
+
+/* Seccion de contactoooooooooo */
+
+#seccion-contacto {
+    background-color: #203864; /* Color de fondo */
+    color: #ffffff; /* Color de texto */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en una columna */
+    gap: 20px; /* Espaciado uniforme entre los elementos */
+    position: relative; /* Asegura que el botón no tome contexto externo */
+}
+
+
+#contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#contact-form button {
+    align-self: flex-end; /* Alinea el botón a la derecha */
+    background-color: #F47734;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin: 0; /* Elimina márgenes adicionales */
+    position: relative; /* Evita que el botón tome posicionamiento externo */
+}
+
+
+
+#contact-form button:hover {
+    background-color: #D65C1F;
+}
+
+
+
+
+
+/* Estilos para notificacioneeeeeeeeeeeeees */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s;
+}
+
+.notification.success {
+    background-color: #4CAF50; /* Verde para éxito */
+}
+
+.notification.error {
+    background-color: #f44336; /* Rojo para error */
+}
+
+/* Animación para aparecer suavemente */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos generales para el pie de pagina */
+
+footer {
+    margin: 0;
+    padding: 20px 40px;
+    background-color: #333; /* Fondo oscuro */
+    color: white; /* Texto en blanco */
+    width: 100%;
+    box-sizing: border-box;
+    position: relative; /* Para evitar movimientos extraños */
+}
+
+
+.footer-top{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+/* Estilo para los enlaces principales */
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #F47734;
+}
+
+/* Estilo para las redes sociales */
+.social-links{
+    text-align: center;
+}
+
+.social-links p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.social-links a img{
+    width: 24px;
+    height: 24px;
+    margin: 0 5px;
+    transition: transform 0.3s;
+}
+
+.redes-social-links img {
+    width: 32px; /* Tamaño adecuado */
+    height: 32px; /* Proporcional al ancho */
+    object-fit: cover; /* Ajusta la imagen para que no se deforme */
+}
+
+
+hr {
+    border: 0;
+    border-top: 1px solid #555;
+    margin: 20px 0;
+}
+
+/* Segunda fila del pue de pagina */
+
+.footer-bottom {
+    text-align: center;
+    font-size: 12px;
+}
+
+.footer-bottom img {
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.footer-bottom p{
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.footer-bottom a {
+    color: #F47734;
+    text-decoration: none;
+}
+
+

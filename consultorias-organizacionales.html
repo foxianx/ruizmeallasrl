@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RuizMealla.srl</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css"/>
+
+</head>
+<body>
+    <!-- Encabezado principal de la pagina -->
+    <header>
+        <!-- Contenedor para el logo-->
+        <div class="logo">
+            <a href="index.html"> <!-- Agrega el enlace que lleva a la pagina principal -->
+                <img src = "Imagenes/PNG/Logoruizmealla.png" alt="Logo de la empresa">
+            </a>    
+        </div>
+        <!-- Navegacion principal-->
+        <nav>
+            <ul>
+                <!-- Enlaces a diferentes secciones de la pagina-->
+                <li><a href="#seccion-bienvenidos">Inicio</a></li>
+                <li><a href="#seccion2">Servicios</a></li>
+                <li><a href="#seccion-contacto">Contacto</a></li>
+                <li><a href="#selection4">Normas</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="carousel">
+        <div class="carousel-imagenes">
+            <img src="Imagenes\DALL·E 2024-12-02 16.58.19 .jpg" alt="Imagen 1">
+            <img src="Imagenes\DALL·E 2024-12-02 17.02.00 .jpg" alt="Imagen 2">
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094</button>
+        <button class="next" onclick="nextSlide()">&#10095</button>
+        <div class="carousel-indicators">
+            <span onclick="showSlide(0)"></span>
+            <span onclick="showSlide(1)"></span>
+            <span onclick="showSlide(2)"></span>
+        </div>
+    </div>
+
+
+    <!-- Seccion de "Incio" 
+    <section id="seccion1">
+        <h1>Inicio</h1>
+        <p>Bienvenidos a nuestra página.</p>
+    </section> -->
+
+    <!-- Seccion de "Bienvenidos" -->
+    <section id="seccion-bienvenidos">
+        <h2>Consultoría</h2>
+    <p>
+        Incluye, entre otros, servicios relacionados con la administración del capital humano, reorganización de estructuras organizacionales y revisión de procesos, asesoría financiera, económica y estratégica para compañías que se encuentran trabajando en reorganizaciones, fusiones y adquisiciones. Está dirigido a todo tipo de compañías.
+    </p>
+    <h3>Rediseño de Estructuras Organizacionales</h3>
+    <p>
+        Muchas organizaciones se plantean su conformación y estilo de trabajo actual, producto de los cambios internos y externos que inciden en las mismas, planteando diversas interrogantes. ¿Estructura organizativa adecuada? ¿Alineamiento de la estrategia y objetivos del negocio a la misión y visión de la empresa? ¿Personal adecuado? Un diagnóstico de la organización nos permitirá diseñar la estructura adecuada identificando sus factores críticos de éxito.
+    </p>
+    <h3>Diagnóstico de Clima Organizacional</h3>
+    <p>
+        Es un estudio realizado a profundidad mediante la aplicación de una metodología de diagnóstico, que permite identificar problemas e insatisfacciones que impiden a las empresas y a las personas alcanzar la excelencia organizacional. El objetivo general del mismo es obtener información de los participantes a nivel personal y grupal acerca de todos aquellos elementos y argumentos que disminuyen su sensación de bienestar en cuanto a nivel de motivación y satisfacción laboral se refiere.
+    </p>
+    <h3>Selección de Personal</h3>
+    <p>
+        Consiste en la búsqueda de candidatos potenciales para cubrir las posiciones de los distintos niveles que demandan las organizaciones. Como firma líder en servicios profesionales, contamos con amplio acceso al mercado de postulantes. Garantizamos absoluta reserva tanto para nuestros clientes como para los candidatos. Evaluaciones uniformes y objetivas respaldan la decisión de nuestros clientes. Nuestro equipo cuenta con especialistas en evaluaciones aptitudinales, experiencias y características de personalidad que requiere cada perfil. Realizadas las evaluaciones psicotécnicas y las observaciones propias de esta práctica profesional, se efectúan tareas de verificación de otros aspectos claves tales como: antecedentes laborales y comerciales de los postulantes y, de ser requerido; antecedentes socio-ambientales de los candidatos que hayan resultado finalistas.
+    </p>
+    <h3>Assessment</h3>
+    <p>
+        Es un instrumento de alta especificidad técnica para la evaluación de potencial de las personas. Permite obtener información objetiva acerca de cómo actuarían las personas en diferentes circunstancias y tareas.
+        Esta herramienta adquiere especial importancia en procesos masivos de selección de personal y en evaluaciones de potencial para determinar los planes de carrera y la inversión en desarrollo humano que la organización quiere hacer. Un proceso de Assessment brinda beneficios tales como: evaluación en forma precisa y completa del potencial, brinda información sobre el comportamiento de las personas en situaciones concretas de trabajo, ayuda a la identificación de habilidades y aptitudes específicamente requeridas para cada puesto, optimiza los esfuerzos orientados al desarrollo.
+    </p>
+    <h3>Capacitación Empresarial</h3>
+    <p>
+        rm gabinete de auditores ha definido realizar actividades de capacitación empresarial en forma intensiva, cubriendo todas las áreas empresariales en sus diversas profesiones y disciplinas.
+        La metodología y modalidad con que se brinda este servicio se definen analizando la naturaleza de los temas a desarrollar y las necesidades planteadas por las organizaciones. Básicamente se definen dos escenarios de servicio: el aula (programas abiertos); la empresa (capacitación en la empresa).
+    </p>
+    </section>     
+
+
+    <!-- Seccion de "Servicios" -->
+    <section id="seccion2">
+        <h1>Ofrecemos una amplia gama de servicios:</h1>
+        <!--<p>Ofrecemos una amplia gama de servicios:</p>-->
+        <div class="seccion2-container">
+            <div class="seccion2-card">
+                <div class="info-principal">
+                    <!--<h2>Ofrecemos una amplia gama de servicios:</h2>-->
+                    <ul class="lista-servicios">
+                        <li onclick="selectOption(event, 'Auditoría Externa Independientes')">Auditoría Externa Independientes</li>
+                        <li onclick="selectOption(event, 'Consultorías Organizacionales')">Consultorías Organizacionales</li>
+                        <li onclick="selectOption(event, 'Asesorías Impositivas')">Asesorías Impositivas</li>
+                        <li onclick="selectOption(event, 'Asesorías Contables')">Asesorías Contables</li>
+                        <li onclick="selectOption(event, 'Outsourcing de Contabilidad e Impuestos')">Outsourcing de Contabilidad e Impuestos</li>
+                        <li onclick="selectOption(event, 'Outsourcing de Recursos Humanos')">Outsourcing de Recursos Humanos</li>
+                        <li onclick="selectOption(event, 'Outsourcing de Auditoría Interna')">Outsourcing de Auditoría Interna</li>
+                        <li onclick="selectOption(event, 'Outsourcing de Administración')">Outsourcing de Administración</li>
+                        <li onclick="selectOption(event, 'Organización y Realización de Inventarios')">Organización y Realización de Inventarios</li>
+                    </ul>
+                </div>
+                <div class="info-secundaria">
+                    <p id="detalle-servicio-detalle">Selecciona un servicio para más detalles.</p>
+                    <a id="ver-mas-btn" href="#" class="ver-mas-btn">Ver más</a>
+                    <button class="close-btn" onclick="closeCard(this)">cerrar</button>
+                </div>                
+            </div>            
+        </div>
+    </section>
+
+    
+    <!-- Seccion de "Contacto" -->
+    <section id="seccion-contacto">
+        <h1>Contacto</h1>
+        <p>¿Tienes preguntas? Contáctanos a través del siguiente formulario:</p>
+        <form id="contact-form" action="http://localhost:3000/contact" method="post">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+        
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+        
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" required></textarea>
+        
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="response-message" style="margin-top: 10px; color: green;"></div>
+                
+        
+    </section>
+
+    <!-- Seccion de "Contacto" 
+    <section>
+        <h1>Contacto</h1>
+        <p>Información de contacto.</p>
+    </section>
+
+-->
+    <!-- Pie de pagina-->
+    <footer>
+        <!-- Primera fila: Enlaces y redes sociales -->
+        <div class="footer-top">
+            <div class="footer-links">
+                <a href="#"> Ruizmeala srl ubicacion</a>
+                <a href="#"></a>
+            </div>
+            <div class="redes-social-links">
+                <p>siguenos en</p>
+                <a href="#"><img src="Imagenes/Redes sociales/2023_Facebook_icon.svg.png" alt="Facebook"></a>
+                <a href="#"><img src="Imagenes/Redes sociales/Logo_of_Twitter.svg.png" alt="Twitter"></a>
+                <a href="#"><img src="Imagenes/Redes sociales/Linkedin.png" alt="Linkedin"></a>
+                <a href="#"><img src="Imagenes/Redes sociales/YoutubeLogo.png" alt="Youtube"></a>
+            </div> 
+        </div>
+        <hr>
+        <!-- Segunda fila: Informacion de derechos de autor-->
+         <div class="footer-bottom">
+            <div class="footer-logo">
+                <img src="Imagenes/PNG/Logoruizmealla.png" alt="ruizmealla srl logo">
+            </div>
+            <p>
+                2024 - Todos los derechos reservados
+                <a href="#">Lleva al inicio</a>
+            </p>
+            <!-- Enlaces legales-->
+            <div class="legal-links">
+                <a href="#">Terminos y condiciones</a>
+            </div>
+         </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+
+<!-- <script src="script.js"></script> -->
+
+
+
+
+
+</html>
